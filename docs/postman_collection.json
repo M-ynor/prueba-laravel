@@ -1,0 +1,231 @@
+{
+  "info": {
+    "name": "Products API",
+    "_postman_id": "products-api-v1",
+    "description": "API RESTful para gestión de productos con soporte multi-divisa",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000/api/v1",
+      "type": "string"
+    },
+    {
+      "key": "token",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "item": [
+    {
+      "name": "Currencies",
+      "item": [
+        {
+          "name": "Get All Currencies",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/currencies",
+              "host": ["{{base_url}}"],
+              "path": ["currencies"]
+            },
+            "description": "Obtener lista de todas las divisas disponibles"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Currency by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/currencies/1",
+              "host": ["{{base_url}}"],
+              "path": ["currencies", "1"]
+            },
+            "description": "Obtener una divisa específica por su ID"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products?per_page=15",
+              "host": ["{{base_url}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "per_page",
+                  "value": "15",
+                  "description": "Items per page"
+                },
+                {
+                  "key": "name",
+                  "value": "laptop",
+                  "disabled": true,
+                  "description": "Filter by name"
+                },
+                {
+                  "key": "currency_id",
+                  "value": "1",
+                  "disabled": true,
+                  "description": "Filter by currency ID"
+                },
+                {
+                  "key": "min_price",
+                  "value": "100",
+                  "disabled": true,
+                  "description": "Minimum price"
+                },
+                {
+                  "key": "max_price",
+                  "value": "1000",
+                  "disabled": true,
+                  "description": "Maximum price"
+                }
+              ]
+            },
+            "description": "Obtener lista paginada de productos con filtros opcionales"
+          },
+          "response": []
+        },
+        {
+          "name": "Create Product",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Laptop Dell XPS 13\",\n  \"description\": \"High-performance laptop with 16GB RAM and 512GB SSD\",\n  \"price\": 999.99,\n  \"currency_id\": 1,\n  \"tax_cost\": 150.00,\n  \"manufacturing_cost\": 500.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            },
+            "description": "Crear un nuevo producto"
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product by ID",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/1",
+              "host": ["{{base_url}}"],
+              "path": ["products", "1"]
+            },
+            "description": "Obtener un producto específico por su ID con todas sus relaciones"
+          },
+          "response": []
+        },
+        {
+          "name": "Update Product",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Laptop Dell XPS 13 - Updated\",\n  \"price\": 1099.99,\n  \"tax_cost\": 165.00\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products/1",
+              "host": ["{{base_url}}"],
+              "path": ["products", "1"]
+            },
+            "description": "Actualizar un producto existente (actualización parcial permitida)"
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Product",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/1",
+              "host": ["{{base_url}}"],
+              "path": ["products", "1"]
+            },
+            "description": "Eliminar un producto (soft delete)"
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Product Prices",
+      "item": [
+        {
+          "name": "Get Product Prices",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products/1/prices",
+              "host": ["{{base_url}}"],
+              "path": ["products", "1", "prices"]
+            },
+            "description": "Obtener todos los precios de un producto en diferentes divisas"
+          },
+          "response": []
+        },
+        {
+          "name": "Create/Update Product Price",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"currency_id\": 2,\n  \"price\": 850.50\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/products/1/prices",
+              "host": ["{{base_url}}"],
+              "path": ["products", "1", "prices"]
+            },
+            "description": "Crear o actualizar el precio de un producto en una divisa específica"
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

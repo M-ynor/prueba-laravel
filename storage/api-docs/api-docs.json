@@ -1,0 +1,300 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Products API",
+    "description": "API RESTful para gestión de productos con soporte multi-divisa",
+    "version": "1.0.0",
+    "contact": {
+      "email": "admin@productos-api.com"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8000/api/v1",
+      "description": "Local Development Server"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Enter token in format: Bearer {token}"
+      }
+    },
+    "schemas": {
+      "Currency": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "example": 1 },
+          "name": { "type": "string", "example": "US Dollar" },
+          "symbol": { "type": "string", "example": "USD" },
+          "exchange_rate": { "type": "number", "format": "float", "example": 1.0 },
+          "formatted_name": { "type": "string", "example": "US Dollar (USD)" }
+        }
+      },
+      "Product": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "integer", "example": 1 },
+          "name": { "type": "string", "example": "Laptop Dell XPS 13" },
+          "description": { "type": "string", "example": "High-performance laptop" },
+          "price": { "type": "number", "format": "float", "example": 999.99 },
+          "currency_id": { "type": "integer", "example": 1 },
+          "tax_cost": { "type": "number", "format": "float", "example": 150.0 },
+          "manufacturing_cost": { "type": "number", "format": "float", "example": 500.0 },
+          "total_cost": { "type": "number", "format": "float", "example": 1649.99 }
+        }
+      }
+    }
+  },
+  "paths": {
+    "/currencies": {
+      "get": {
+        "tags": ["Currencies"],
+        "summary": "Get all currencies",
+        "description": "Obtiene lista de todas las divisas disponibles",
+        "security": [{ "bearerAuth": [] }],
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "success": { "type": "boolean", "example": true },
+                    "data": {
+                      "type": "array",
+                      "items": { "$ref": "#/components/schemas/Currency" }
+                    },
+                    "message": { "type": "string", "example": "Divisas obtenidas exitosamente" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/currencies/{id}": {
+      "get": {
+        "tags": ["Currencies"],
+        "summary": "Get currency by ID",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Successful operation" },
+          "404": { "description": "Currency not found" }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Get list of products",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "name",
+            "in": "query",
+            "description": "Filter by product name",
+            "schema": { "type": "string" }
+          },
+          {
+            "name": "currency_id",
+            "in": "query",
+            "description": "Filter by currency ID",
+            "schema": { "type": "integer" }
+          },
+          {
+            "name": "min_price",
+            "in": "query",
+            "description": "Minimum price filter",
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "max_price",
+            "in": "query",
+            "description": "Maximum price filter",
+            "schema": { "type": "number" }
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Items per page",
+            "schema": { "type": "integer", "default": 15 }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Successful operation" }
+        }
+      },
+      "post": {
+        "tags": ["Products"],
+        "summary": "Create a new product",
+        "security": [{ "bearerAuth": [] }],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["name", "price", "currency_id", "tax_cost", "manufacturing_cost"],
+                "properties": {
+                  "name": { "type": "string", "example": "Laptop Dell XPS 13" },
+                  "description": { "type": "string", "example": "High-performance laptop" },
+                  "price": { "type": "number", "example": 999.99 },
+                  "currency_id": { "type": "integer", "example": 1 },
+                  "tax_cost": { "type": "number", "example": 150.0 },
+                  "manufacturing_cost": { "type": "number", "example": 500.0 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Product created successfully" },
+          "422": { "description": "Validation error" }
+        }
+      }
+    },
+    "/products/{id}": {
+      "get": {
+        "tags": ["Products"],
+        "summary": "Get product by ID",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Successful operation" },
+          "404": { "description": "Product not found" }
+        }
+      },
+      "put": {
+        "tags": ["Products"],
+        "summary": "Update a product",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": { "type": "string" },
+                  "description": { "type": "string" },
+                  "price": { "type": "number" },
+                  "currency_id": { "type": "integer" },
+                  "tax_cost": { "type": "number" },
+                  "manufacturing_cost": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": { "description": "Product updated successfully" },
+          "404": { "description": "Product not found" },
+          "422": { "description": "Validation error" }
+        }
+      },
+      "delete": {
+        "tags": ["Products"],
+        "summary": "Delete a product",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Product deleted successfully" },
+          "404": { "description": "Product not found" }
+        }
+      }
+    },
+    "/products/{productId}/prices": {
+      "get": {
+        "tags": ["Product Prices"],
+        "summary": "Get all prices for a product",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "responses": {
+          "200": { "description": "Successful operation" },
+          "404": { "description": "Product not found" }
+        }
+      },
+      "post": {
+        "tags": ["Product Prices"],
+        "summary": "Create or update a product price",
+        "security": [{ "bearerAuth": [] }],
+        "parameters": [
+          {
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": { "type": "integer" }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "required": ["currency_id", "price"],
+                "properties": {
+                  "currency_id": { "type": "integer", "example": 2 },
+                  "price": { "type": "number", "example": 850.5 }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": { "description": "Price created/updated successfully" },
+          "404": { "description": "Product or currency not found" },
+          "422": { "description": "Validation error" }
+        }
+      }
+    }
+  }
+}
