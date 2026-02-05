@@ -12,14 +12,16 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
+        $middleware->api(prepend: [
+            \App\Http\Middleware\LogApiRequest::class,
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {
         $exceptions->render(function (\Illuminate\Validation\ValidationException $e, $request) {
             if ($request->is('api/*')) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Error de validación',
+                    'message' => 'Validation error',
                     'errors' => $e->errors()
                 ], 422);
             }
@@ -29,7 +31,7 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('api/*')) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Recurso no encontrado'
+                    'message' => 'Resource not found'
                 ], 404);
             }
         });
@@ -38,7 +40,7 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('api/*')) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Endpoint no encontrado'
+                    'message' => 'Endpoint not found'
                 ], 404);
             }
         });
@@ -47,7 +49,7 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('api/*')) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Método HTTP no permitido'
+                    'message' => 'HTTP method not allowed'
                 ], 405);
             }
         });
@@ -56,7 +58,7 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('api/*')) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'No autenticado'
+                    'message' => 'Unauthenticated'
                 ], 401);
             }
         });
@@ -65,7 +67,7 @@ return Application::configure(basePath: dirname(__DIR__))
             if ($request->is('api/*') && !config('app.debug')) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Error interno del servidor'
+                    'message' => 'Internal server error'
                 ], 500);
             }
         });

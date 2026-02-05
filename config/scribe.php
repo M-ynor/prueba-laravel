@@ -11,28 +11,28 @@ use function Knuckles\Scribe\Config\removeStrategies;
 
 return [
     // The HTML <title> for the generated documentation.
-    'title' => 'Products API - Documentación',
+    'title' => 'Products API - Documentation',
 
     // A short description of your API. Will be included in the docs webpage, Postman collection and OpenAPI spec.
-    'description' => 'API RESTful para gestión de productos con soporte multi-divisa. Implementada con Laravel 11 siguiendo las mejores prácticas de arquitectura y desarrollo.',
+    'description' => 'RESTful API for product management with multi-currency support. Built with Laravel 11 following architecture and development best practices.',
 
     // Text to place in the "Introduction" section, right after the `description`. Markdown and HTML are supported.
     'intro_text' => <<<'INTRO'
-            Esta API permite gestionar productos con precios en múltiples divisas. 
+            This API lets you manage products with prices in multiple currencies.
             
-            ## Características
+            ## Features
             
-            - ✅ CRUD completo de productos
-            - ✅ Soporte multi-divisa
-            - ✅ Autenticación con Laravel Sanctum
-            - ✅ Validación robusta
-            - ✅ Arquitectura en capas (Repository-Service-Controller)
+            - ✅ Full product CRUD
+            - ✅ Multi-currency support
+            - ✅ Laravel Sanctum authentication
+            - ✅ Robust validation
+            - ✅ Layered architecture (Repository-Service-Controller)
             
-            ## Autenticación
+            ## Authentication
             
-            Todos los endpoints requieren un token de Bearer. Usa el token en el header `Authorization: Bearer {token}`.
+            All endpoints require a Bearer token. Use the token in the header `Authorization: Bearer {token}`.
             
-            <aside class="notice">Puedes ver ejemplos de código en diferentes lenguajes en el panel derecho.</aside>
+            <aside class="notice">You can see code examples in different languages in the right panel.</aside>
         INTRO,
 
     // The base URL displayed in the docs.

@@ -4,26 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-/**
- * Store Product Price Request
- * 
- * Validates data for creating or updating a product price in a specific currency.
- */
 class StoreProductPriceRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
@@ -32,34 +19,24 @@ class StoreProductPriceRequest extends FormRequest
         ];
     }
 
-    /**
-     * Get custom messages for validation errors.
-     *
-     * @return array<string, string>
-     */
     public function messages(): array
     {
         return [
-            'currency_id.required' => 'La divisa es obligatoria.',
-            'currency_id.integer' => 'La divisa debe ser un número entero.',
-            'currency_id.exists' => 'La divisa seleccionada no existe.',
-            'price.required' => 'El precio es obligatorio.',
-            'price.numeric' => 'El precio debe ser un número.',
-            'price.min' => 'El precio no puede ser negativo.',
-            'price.regex' => 'El precio debe tener máximo 2 decimales.',
+            'currency_id.required' => 'The currency is required.',
+            'currency_id.integer' => 'The currency must be an integer.',
+            'currency_id.exists' => 'The selected currency does not exist.',
+            'price.required' => 'The price is required.',
+            'price.numeric' => 'The price must be a number.',
+            'price.min' => 'The price cannot be negative.',
+            'price.regex' => 'The price must have at most 2 decimal places.',
         ];
     }
 
-    /**
-     * Get custom attribute names for validator errors.
-     *
-     * @return array<string, string>
-     */
     public function attributes(): array
     {
         return [
-            'currency_id' => 'divisa',
-            'price' => 'precio',
+            'currency_id' => 'currency',
+            'price' => 'price',
         ];
     }
 }

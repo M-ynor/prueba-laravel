@@ -1,22 +1,22 @@
 # API Documentation - Products API
 
-## Información General
+## Overview
 
-Esta API RESTful permite gestionar productos con soporte para múltiples divisas. Implementa autenticación mediante tokens, validación robusta y sigue las mejores prácticas de desarrollo con Laravel.
+This RESTful API manages products with multi-currency support. It uses token authentication, robust validation, and Laravel best practices.
 
 **Base URL:** `http://localhost:8000/api/v1`
 
-**Formato de respuesta:** JSON
+**Response format:** JSON
 
-**Autenticación:** Bearer Token (Laravel Sanctum)
+**Authentication:** Bearer Token (Laravel Sanctum)
 
 ---
 
-## Autenticación
+## Authentication
 
-### Obtener un Token
+### Getting a Token
 
-Para usar la API, primero necesitas un token de autenticación. Puedes generarlo mediante Tinker:
+Generate a token via Tinker (see `GENERATE_TOKEN.md` for details):
 
 ```bash
 php artisan tinker
@@ -25,9 +25,9 @@ php artisan tinker
 >>> echo $token
 ```
 
-### Usar el Token
+### Using the Token
 
-Incluye el token en el header `Authorization` de todas las peticiones:
+Include the token in the `Authorization` header for all requests:
 
 ```
 Authorization: Bearer {your-token-here}
@@ -35,15 +35,15 @@ Authorization: Bearer {your-token-here}
 
 ---
 
-## Formato de Respuestas
+## Response Format
 
-### Respuesta Exitosa
+### Success
 
 ```json
 {
   "success": true,
   "data": { ... },
-  "message": "Operación exitosa",
+  "message": "Operation successful",
   "meta": {
     "total": 100,
     "per_page": 15,
@@ -53,36 +53,36 @@ Authorization: Bearer {your-token-here}
 }
 ```
 
-### Respuesta de Error
+### Error
 
 ```json
 {
   "success": false,
-  "message": "Descripción del error",
+  "message": "Error description",
   "errors": {
-    "field": ["Error de validación"]
+    "field": ["Validation error"]
   }
 }
 ```
 
-### Códigos de Estado HTTP
+### HTTP Status Codes
 
-| Código | Significado |
-|--------|-------------|
-| 200 | OK - Petición exitosa |
-| 201 | Created - Recurso creado exitosamente |
-| 204 | No Content - Eliminación exitosa |
-| 400 | Bad Request - Petición mal formada |
-| 401 | Unauthorized - No autenticado |
-| 404 | Not Found - Recurso no encontrado |
-| 422 | Unprocessable Entity - Error de validación |
-| 500 | Internal Server Error - Error del servidor |
+| Code | Meaning |
+|------|---------|
+| 200 | OK - Request successful |
+| 201 | Created - Resource created |
+| 204 | No Content - Deletion successful |
+| 400 | Bad Request - Malformed request |
+| 401 | Unauthorized - Not authenticated |
+| 404 | Not Found - Resource not found |
+| 422 | Unprocessable Entity - Validation error |
+| 500 | Internal Server Error - Server error |
 
 ---
 
 ## Endpoints
 
-### 1. Currencies (Divisas)
+### 1. Currencies
 
 #### GET /currencies
 
@@ -106,7 +106,7 @@ Obtiene lista de todas las divisas disponibles.
       "updated_at": "2026-02-05T00:00:00Z"
     }
   ],
-  "message": "Divisas obtenidas exitosamente"
+  "message": "Currencies retrieved successfully"
 }
 ```
 
@@ -116,7 +116,7 @@ Obtiene una divisa específica por ID.
 
 **Autenticación:** Requerida
 
-**Parámetros de URL:**
+**URL parameters:**
 - `id` (integer, required): ID de la divisa
 
 **Response 200:**
@@ -148,7 +148,7 @@ Obtiene una divisa específica por ID.
 
 ---
 
-### 2. Products (Productos)
+### 2. Products
 
 #### GET /products
 
@@ -165,7 +165,7 @@ Obtiene lista paginada de productos con filtros opcionales.
 - `sort_by` (string, optional): Campo para ordenar (default: created_at)
 - `sort_order` (string, optional): Orden (asc/desc, default: desc)
 
-**Ejemplo:**
+**Example:**
 
 ```bash
 GET /products?name=laptop&min_price=500&max_price=2000&per_page=10
@@ -202,7 +202,7 @@ GET /products?name=laptop&min_price=500&max_price=2000&per_page=10
     "current_page": 1,
     "last_page": 1
   },
-  "message": "Productos obtenidos exitosamente"
+  "message": "Products retrieved successfully"
 }
 ```
 
@@ -277,7 +277,7 @@ Obtiene un producto específico con todas sus relaciones.
 
 **Autenticación:** Requerida
 
-**Parámetros de URL:**
+**URL parameters:**
 - `id` (integer, required): ID del producto
 
 **Response 200:**
@@ -335,7 +335,7 @@ Actualiza un producto existente (actualización parcial permitida).
 
 **Autenticación:** Requerida
 
-**Parámetros de URL:**
+**URL parameters:**
 - `id` (integer, required): ID del producto
 
 **Request Body (todos los campos son opcionales):**
@@ -373,7 +373,7 @@ Elimina un producto (soft delete).
 
 **Autenticación:** Requerida
 
-**Parámetros de URL:**
+**URL parameters:**
 - `id` (integer, required): ID del producto
 
 **Response 200:**
@@ -396,7 +396,7 @@ Elimina un producto (soft delete).
 
 ---
 
-### 3. Product Prices (Precios de Productos)
+### 3. Product Prices
 
 #### GET /products/{productId}/prices
 
@@ -404,7 +404,7 @@ Obtiene todos los precios de un producto en diferentes divisas.
 
 **Autenticación:** Requerida
 
-**Parámetros de URL:**
+**URL parameters:**
 - `productId` (integer, required): ID del producto
 
 **Response 200:**
@@ -440,7 +440,7 @@ Obtiene todos los precios de un producto en diferentes divisas.
       "updated_at": "2026-02-05T10:35:00Z"
     }
   ],
-  "message": "Precios obtenidos exitosamente"
+  "message": "Prices retrieved successfully"
 }
 ```
 
@@ -450,7 +450,7 @@ Crea o actualiza el precio de un producto en una divisa específica.
 
 **Autenticación:** Requerida
 
-**Parámetros de URL:**
+**URL parameters:**
 - `productId` (integer, required): ID del producto
 
 **Request Body:**
@@ -490,9 +490,9 @@ Crea o actualiza el precio de un producto en una divisa específica.
 
 ---
 
-## Ejemplos de uso con cURL
+## cURL usage examples
 
-### Obtener todas las divisas
+### Get all currencies
 
 ```bash
 curl -X GET "http://localhost:8000/api/v1/currencies" \
@@ -500,7 +500,7 @@ curl -X GET "http://localhost:8000/api/v1/currencies" \
   -H "Accept: application/json"
 ```
 
-### Crear un producto
+### Create a product
 
 ```bash
 curl -X POST "http://localhost:8000/api/v1/products" \
@@ -524,7 +524,7 @@ curl -X GET "http://localhost:8000/api/v1/products?name=laptop&min_price=500" \
   -H "Accept: application/json"
 ```
 
-### Actualizar un producto
+### Update a product
 
 ```bash
 curl -X PUT "http://localhost:8000/api/v1/products/1" \

@@ -6,6 +6,10 @@ Route::get('/', function () {
     return redirect('/docs');
 });
 
+Route::get('/login', function () {
+    return redirect('/docs');
+})->name('login');
+
 Route::get('/docs/postman', function () {
     return response()->download(
         storage_path('app/private/scribe/collection.json'),

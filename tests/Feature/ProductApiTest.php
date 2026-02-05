@@ -19,12 +19,8 @@ class ProductApiTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        
-        // Create test user and authenticate
         $this->user = User::factory()->create();
         Sanctum::actingAs($this->user);
-        
-        // Create test currency
         $this->currency = Currency::create([
             'name' => 'US Dollar',
             'symbol' => 'USD',
@@ -166,7 +162,6 @@ class ProductApiTest extends TestCase
 
     public function test_cannot_access_api_without_authentication(): void
     {
-        // Clear authentication
         $this->app->get('auth')->forgetGuards();
 
         $response = $this->getJson('/api/v1/products');

@@ -4,26 +4,13 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-/**
- * Update Product Request
- * 
- * Validates data for updating an existing product.
- */
 class UpdateProductRequest extends FormRequest
 {
-    /**
-     * Determine if the user is authorized to make this request.
-     */
     public function authorize(): bool
     {
         return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
     public function rules(): array
     {
         return [
@@ -36,50 +23,40 @@ class UpdateProductRequest extends FormRequest
         ];
     }
 
-    /**
-     * Get custom messages for validation errors.
-     *
-     * @return array<string, string>
-     */
     public function messages(): array
     {
         return [
-            'name.required' => 'El nombre del producto es obligatorio.',
-            'name.string' => 'El nombre del producto debe ser texto.',
-            'name.max' => 'El nombre del producto no puede exceder 255 caracteres.',
-            'description.string' => 'La descripción debe ser texto.',
-            'price.required' => 'El precio es obligatorio.',
-            'price.numeric' => 'El precio debe ser un número.',
-            'price.min' => 'El precio no puede ser negativo.',
-            'price.regex' => 'El precio debe tener máximo 2 decimales.',
-            'currency_id.required' => 'La divisa es obligatoria.',
-            'currency_id.integer' => 'La divisa debe ser un número entero.',
-            'currency_id.exists' => 'La divisa seleccionada no existe.',
-            'tax_cost.required' => 'El costo de impuestos es obligatorio.',
-            'tax_cost.numeric' => 'El costo de impuestos debe ser un número.',
-            'tax_cost.min' => 'El costo de impuestos no puede ser negativo.',
-            'tax_cost.regex' => 'El costo de impuestos debe tener máximo 2 decimales.',
-            'manufacturing_cost.required' => 'El costo de fabricación es obligatorio.',
-            'manufacturing_cost.numeric' => 'El costo de fabricación debe ser un número.',
-            'manufacturing_cost.min' => 'El costo de fabricación no puede ser negativo.',
-            'manufacturing_cost.regex' => 'El costo de fabricación debe tener máximo 2 decimales.',
+            'name.required' => 'The product name is required.',
+            'name.string' => 'The product name must be a string.',
+            'name.max' => 'The product name may not exceed 255 characters.',
+            'description.string' => 'The description must be a string.',
+            'price.required' => 'The price is required.',
+            'price.numeric' => 'The price must be a number.',
+            'price.min' => 'The price cannot be negative.',
+            'price.regex' => 'The price must have at most 2 decimal places.',
+            'currency_id.required' => 'The currency is required.',
+            'currency_id.integer' => 'The currency must be an integer.',
+            'currency_id.exists' => 'The selected currency does not exist.',
+            'tax_cost.required' => 'The tax cost is required.',
+            'tax_cost.numeric' => 'The tax cost must be a number.',
+            'tax_cost.min' => 'The tax cost cannot be negative.',
+            'tax_cost.regex' => 'The tax cost must have at most 2 decimal places.',
+            'manufacturing_cost.required' => 'The manufacturing cost is required.',
+            'manufacturing_cost.numeric' => 'The manufacturing cost must be a number.',
+            'manufacturing_cost.min' => 'The manufacturing cost cannot be negative.',
+            'manufacturing_cost.regex' => 'The manufacturing cost must have at most 2 decimal places.',
         ];
     }
 
-    /**
-     * Get custom attribute names for validator errors.
-     *
-     * @return array<string, string>
-     */
     public function attributes(): array
     {
         return [
-            'name' => 'nombre',
-            'description' => 'descripción',
-            'price' => 'precio',
-            'currency_id' => 'divisa',
-            'tax_cost' => 'costo de impuestos',
-            'manufacturing_cost' => 'costo de fabricación',
+            'name' => 'product name',
+            'description' => 'description',
+            'price' => 'price',
+            'currency_id' => 'currency',
+            'tax_cost' => 'tax cost',
+            'manufacturing_cost' => 'manufacturing cost',
         ];
     }
 }

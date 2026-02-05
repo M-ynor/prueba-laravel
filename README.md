@@ -1,91 +1,91 @@
 # Products API - Laravel 11
 
-API RESTful robusta para gestión de productos con soporte multi-divisa, implementada con Laravel 11 siguiendo las mejores prácticas de arquitectura y desarrollo.
+RESTful API for product management with multi-currency support, built with Laravel 11 following architecture and development best practices.
 
-## 📋 Tabla de Contenidos
+## Table of Contents
 
-- [Características](#características)
-- [Requisitos del Sistema](#requisitos-del-sistema)
-- [Instalación](#instalación)
-- [Configuración](#configuración)
-- [Arquitectura del Proyecto](#arquitectura-del-proyecto)
-- [Buenas Prácticas Implementadas](#buenas-prácticas-implementadas)
-- [Endpoints de la API](#endpoints-de-la-api)
-- [Documentación](#documentación)
+- [Features](#features)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Project Architecture](#project-architecture)
+- [Best Practices](#best-practices)
+- [API Endpoints](#api-endpoints)
+- [Documentation](#documentation)
 - [Testing](#testing)
-- [Seguridad](#seguridad)
+- [Security](#security)
 - [Troubleshooting](#troubleshooting)
 
-## ✨ Características
+## Features
 
-- ✅ **CRUD completo** de productos con soft deletes
-- ✅ **Soporte multi-divisa** con gestión de precios por producto
-- ✅ **Autenticación** con Laravel Sanctum (tokens de API)
-- ✅ **Validación robusta** mediante Form Requests
-- ✅ **Arquitectura en capas** (Controller → Service → Repository → Model)
-- ✅ **API Resources** para transformación consistente de respuestas
-- ✅ **Manejo de errores** centralizado y consistente
-- ✅ **Documentación completa** (Laravel Scribe, Postman, OpenAPI)
-- ✅ **Testing** con PHPUnit (Feature y Unit tests)
+- **Full CRUD** for products with soft deletes
+- **Multi-currency support** with per-product price management
+- **Authentication** with Laravel Sanctum (API tokens)
+- **Robust validation** via Form Requests
+- **Layered architecture** (Controller → Service → Repository → Model)
+- **API Resources** for consistent response transformation
+- **Centralized** and consistent error handling
+- **Documentation** (Laravel Scribe, Postman, OpenAPI)
+- **Testing** with PHPUnit (Feature tests)
 
-## 🔧 Requisitos del Sistema
+## Requirements
 
 - PHP >= 8.2
 - Composer >= 2.0
 - SQLite 3
 - Extensions: PDO, SQLite, OpenSSL, Mbstring
 
-## 📦 Instalación
+## Installation
 
-### 1. Clonar el repositorio
+### 1. Clone the repository
 
 ```bash
 git clone <repository-url>
 cd prueba-laravel
 ```
 
-### 2. Instalar dependencias
+### 2. Install dependencies
 
 ```bash
 composer install
 ```
 
-### 3. Configurar el entorno
+### 3. Configure environment
 
 ```bash
 cp .env.example .env
 php artisan key:generate
 ```
 
-### 4. Ejecutar migraciones y seeders
+### 4. Run migrations and seeders
 
 ```bash
 php artisan migrate
 php artisan db:seed
 ```
 
-### 5. Iniciar el servidor
+### 5. Start the server
 
 ```bash
 php artisan serve
 ```
 
-La API estará disponible en `http://localhost:8000`
+API will be available at `http://localhost:8000`
 
-## ⚙️ Configuración
+## Configuration
 
-### Base de Datos
+### Database
 
-El proyecto usa SQLite por defecto. La configuración en `.env`:
+The project uses SQLite by default. Configuration in `.env`:
 
 ```env
 DB_CONNECTION=sqlite
-DB_DATABASE=/ruta/absoluta/a/database/database.sqlite
+DB_DATABASE=/absolute/path/to/database/database.sqlite
 ```
 
-### Sanctum (Autenticación)
+### Sanctum (Authentication)
 
-Para generar tokens de API:
+To generate API tokens, see `GENERATE_TOKEN.md` or run:
 
 ```bash
 php artisan tinker
@@ -93,11 +93,11 @@ php artisan tinker
 >>> $token = $user->createToken('api-token')->plainTextToken
 ```
 
-Usa este token en el header `Authorization: Bearer {token}` para todas las peticiones.
+Use this token in the header `Authorization: Bearer {token}` for all requests.
 
-## 🏗️ Arquitectura del Proyecto
+## Project Architecture
 
-La aplicación sigue una **arquitectura en capas** para separar responsabilidades y mantener el código limpio y escalable:
+The application uses a **layered architecture** to separate concerns and keep code clean and scalable:
 
 ```
 ┌─────────────────┐
@@ -105,19 +105,19 @@ La aplicación sigue una **arquitectura en capas** para separar responsabilidade
 └────────┬────────┘
          │
 ┌────────▼────────┐
-│   Controller    │  ← Maneja requests/responses HTTP
+│   Controller    │  ← Handles HTTP requests/responses
 └────────┬────────┘
          │
 ┌────────▼────────┐
-│     Service     │  ← Lógica de negocio y orquestación
+│     Service     │  ← Business logic and orchestration
 └────────┬────────┘
          │
 ┌────────▼────────┐
-│   Repository    │  ← Acceso a datos (queries)
+│   Repository    │  ← Data access (queries)
 └────────┬────────┘
          │
 ┌────────▼────────┐
-│ Eloquent Model  │  ← ORM y relaciones
+│ Eloquent Model  │  ← ORM and relations
 └────────┬────────┘
          │
 ┌────────▼────────┐
@@ -125,14 +125,16 @@ La aplicación sigue una **arquitectura en capas** para separar responsabilidade
 └─────────────────┘
 ```
 
-### Estructura de Directorios
+See `STRUCTURE.md` for folder-by-folder description.
+
+### Directory Structure
 
 ```
 app/
 ├── Http/
-│   ├── Controllers/Api/V1/    # Controllers versionados
-│   ├── Requests/               # Form Requests (validación)
-│   └── Resources/              # API Resources (transformación)
+│   ├── Controllers/Api/V1/    # Versioned API controllers
+│   ├── Requests/               # Form Requests (validation)
+│   └── Resources/              # API Resources (transformation)
 ├── Models/                     # Eloquent Models
 ├── Repositories/               # Repository Pattern
 │   ├── Contracts/              # Interfaces
@@ -146,19 +148,19 @@ app/
 └── Exceptions/                 # Custom Exceptions
 ```
 
-## 🎯 Buenas Prácticas Implementadas
+## Best Practices
 
 ### 1. **Repository Pattern**
 
-Separa la lógica de acceso a datos del resto de la aplicación.
+Separates data access logic from the rest of the application.
 
-**Ventajas:**
-- Desacoplamiento de la capa de datos
-- Facilita testing con mocks
-- Centraliza queries complejas
-- Permite cambiar el ORM sin afectar la lógica de negocio
+**Benefits:**
+- Decoupled data layer
+- Easier testing with mocks
+- Centralized complex queries
+- Swap ORM without affecting business logic
 
-**Ejemplo:**
+**Example:**
 
 ```php
 interface ProductRepositoryInterface
@@ -181,15 +183,15 @@ class ProductRepository implements ProductRepositoryInterface
 
 ### 2. **Service Layer**
 
-Contiene toda la lógica de negocio de la aplicación.
+Holds all business logic.
 
-**Ventajas:**
-- Controllers delgados y enfocados en HTTP
-- Lógica reutilizable entre diferentes controllers
-- Facilita testing unitario
-- Manejo centralizado de transacciones
+**Benefits:**
+- Thin controllers focused on HTTP
+- Reusable logic across controllers
+- Easier unit testing
+- Centralized transaction handling
 
-**Ejemplo:**
+**Example:**
 
 ```php
 class ProductService
@@ -216,15 +218,15 @@ class ProductService
 
 ### 3. **Form Requests**
 
-Validación separada en clases dedicadas.
+Validation in dedicated classes.
 
-**Ventajas:**
-- Controllers más limpios
-- Validaciones reutilizables
-- Mensajes de error personalizados
-- Fácil mantenimiento
+**Benefits:**
+- Cleaner controllers
+- Reusable validation rules
+- Custom error messages
+- Easy maintenance
 
-**Ejemplo:**
+**Example:**
 
 ```php
 class StoreProductRequest extends FormRequest
@@ -241,7 +243,7 @@ class StoreProductRequest extends FormRequest
     public function messages(): array
     {
         return [
-            'name.required' => 'El nombre del producto es obligatorio.',
+            'name.required' => 'The product name is required.',
             // ...
         ];
     }
@@ -250,15 +252,15 @@ class StoreProductRequest extends FormRequest
 
 ### 4. **API Resources**
 
-Transformación consistente de datos para respuestas.
+Consistent data transformation for responses.
 
-**Ventajas:**
-- Formato de respuesta consistente
-- Oculta/expone datos según contexto
-- Facilita versionado de API
-- Incluye relaciones condicionales
+**Benefits:**
+- Consistent response format
+- Hide/expose data by context
+- Easier API versioning
+- Conditional relations
 
-**Ejemplo:**
+**Example:**
 
 ```php
 class ProductResource extends JsonResource
@@ -278,13 +280,13 @@ class ProductResource extends JsonResource
 
 ### 5. **Dependency Injection**
 
-Inyección de dependencias en constructores.
+Dependencies injected via constructors.
 
-**Ventajas:**
-- Código testeable
-- Bajo acoplamiento
-- Facilita mocking en tests
-- Principio de inversión de dependencias (SOLID)
+**Benefits:**
+- Testable code
+- Low coupling
+- Easy mocking in tests
+- Dependency inversion (SOLID)
 
 **Binding en AppServiceProvider:**
 
@@ -295,11 +297,11 @@ $this->app->bind(
 );
 ```
 
-### 6. **Scopes en Models**
+### 6. **Model Scopes**
 
-Queries reutilizables y legibles.
+Reusable, readable queries.
 
-**Ejemplo:**
+**Example:**
 
 ```php
 class Product extends Model
@@ -310,29 +312,29 @@ class Product extends Model
     }
 }
 
-// Uso:
+// Usage:
 Product::byName('laptop')->get();
 ```
 
 ### 7. **Soft Deletes**
 
-Los productos eliminados se marcan en vez de borrarse.
+Deleted products are marked, not removed.
 
-**Ventajas:**
-- Auditoría completa
-- Recuperación de datos
-- Integridad referencial
+**Benefits:**
+- Full audit trail
+- Data recovery
+- Referential integrity
 
-### 8. **Exception Handling Centralizado**
+### 8. **Centralized Exception Handling**
 
-Manejo consistente de errores en `bootstrap/app.php`:
+Consistent error handling in `bootstrap/app.php`:
 
 ```php
 $exceptions->render(function (ValidationException $e, $request) {
     if ($request->is('api/*')) {
         return response()->json([
             'success' => false,
-            'message' => 'Error de validación',
+            'message' => 'Validation error',
             'errors' => $e->errors()
         ], 422);
     }
@@ -341,15 +343,15 @@ $exceptions->render(function (ValidationException $e, $request) {
 
 ### 9. **Eager Loading**
 
-Previene el problema N+1 queries:
+Prevents N+1 queries:
 
 ```php
 Product::with(['currency', 'productPrices.currency'])->get();
 ```
 
-### 10. **Type Hinting y Return Types**
+### 10. **Type Hinting and Return Types**
 
-Código fuertemente tipado:
+Strongly typed code:
 
 ```php
 public function getProduct(int $id): ?Product
@@ -358,7 +360,7 @@ public function getProduct(int $id): ?Product
 }
 ```
 
-## 🔌 Endpoints de la API
+## API Endpoints
 
 ### Base URL
 
@@ -366,9 +368,9 @@ public function getProduct(int $id): ?Product
 http://localhost:8000/api/v1
 ```
 
-### Autenticación
+### Authentication
 
-Todas las rutas requieren autenticación con Bearer token:
+All routes require Bearer token authentication:
 
 ```
 Authorization: Bearer {your-token}
@@ -376,36 +378,36 @@ Authorization: Bearer {your-token}
 
 ### Currencies
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/currencies` | Lista todas las divisas |
-| GET | `/currencies/{id}` | Obtiene una divisa por ID |
+| GET | `/currencies` | List all currencies |
+| GET | `/currencies/{id}` | Get currency by ID |
 
 ### Products
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/products` | Lista paginada de productos con filtros |
-| POST | `/products` | Crear producto |
-| GET | `/products/{id}` | Obtener producto por ID |
-| PUT | `/products/{id}` | Actualizar producto |
-| DELETE | `/products/{id}` | Eliminar producto (soft delete) |
+| GET | `/products` | Paginated product list with filters |
+| POST | `/products` | Create product |
+| GET | `/products/{id}` | Get product by ID |
+| PUT | `/products/{id}` | Update product |
+| DELETE | `/products/{id}` | Delete product (soft delete) |
 
-**Filtros disponibles en GET /products:**
-- `name`: Filtrar por nombre (búsqueda parcial)
-- `currency_id`: Filtrar por divisa
-- `min_price`: Precio mínimo
-- `max_price`: Precio máximo
-- `per_page`: Items por página (default: 15)
+**GET /products query params:**
+- `name`: Filter by name (partial match)
+- `currency_id`: Filter by currency
+- `min_price`: Minimum price
+- `max_price`: Maximum price
+- `per_page`: Items per page (default: 15)
 
 ### Product Prices
 
-| Método | Endpoint | Descripción |
+| Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/products/{id}/prices` | Lista precios del producto |
-| POST | `/products/{id}/prices` | Crear/actualizar precio en divisa |
+| GET | `/products/{id}/prices` | List product prices |
+| POST | `/products/{id}/prices` | Create/update price for a currency |
 
-### Ejemplo de Request
+### Example Request
 
 ```bash
 curl -X POST http://localhost:8000/api/v1/products \
@@ -421,15 +423,15 @@ curl -X POST http://localhost:8000/api/v1/products \
   }'
 ```
 
-### Formato de Respuestas
+### Response Format
 
-**Éxito:**
+**Success:**
 
 ```json
 {
   "success": true,
   "data": { ... },
-  "message": "Operación exitosa",
+  "message": "Operation successful",
   "meta": {
     "pagination": { ... }
   }
@@ -441,152 +443,103 @@ curl -X POST http://localhost:8000/api/v1/products \
 ```json
 {
   "success": false,
-  "message": "Descripción del error",
+  "message": "Error description",
   "errors": { ... }
 }
 ```
 
-## 📚 Documentación
+## Documentation
 
-El proyecto incluye múltiples formatos de documentación:
+- **Web docs:** `http://localhost:8000/docs` (Laravel Scribe)
+- **Postman:** `http://localhost:8000/docs/postman` or `storage/app/private/scribe/collection.json`
+- **OpenAPI:** `http://localhost:8000/docs/openapi` or `storage/app/private/scribe/openapi.yaml`
+- **Regenerate:** `php artisan scribe:generate`
 
-### 1. Documentación Web (Laravel Scribe)
-
-Interfaz interactiva tipo MkDocs con ejemplos de código:
-
-```bash
-php artisan serve
-# Visita: http://localhost:8000/docs
-```
-
-Incluye:
-- ✅ Descripción detallada de cada endpoint
-- ✅ Ejemplos de código en múltiples lenguajes
-- ✅ Respuestas de ejemplo
-- ✅ Pruebas interactivas
-
-### 2. Postman Collection
-
-Descarga la colección generada automáticamente:
-
-```bash
-# Visita: http://localhost:8000/docs/postman
-```
-
-O manualmente desde: `storage/app/private/scribe/collection.json`
-
-### 3. OpenAPI/Swagger Specification
-
-Descarga la especificación OpenAPI:
-
-```bash
-# Visita: http://localhost:8000/docs/openapi
-```
-
-O manualmente desde: `storage/app/private/scribe/openapi.yaml`
-
-### 4. Regenerar Documentación
-
-Después de cambios en los endpoints:
-
-```bash
-php artisan scribe:generate
-```
-
-## 🧪 Testing
-
-### Ejecutar todos los tests
+## Testing
 
 ```bash
 php artisan test
-```
-
-### Tests por tipo
-
-```bash
-# Feature tests
 php artisan test --testsuite=Feature
-
-# Unit tests
-php artisan test --testsuite=Unit
-```
-
-### Coverage
-
-```bash
 php artisan test --coverage
 ```
 
-## 🔒 Seguridad
+## Monitoring & Logging
 
-### Medidas Implementadas
+### Laravel Telescope
 
-1. **Laravel Sanctum**: Autenticación basada en tokens
-2. **Rate Limiting**: 60 requests por minuto por defecto
-3. **CORS**: Configurado para entornos permitidos
-4. **Mass Assignment Protection**: `$fillable` en todos los models
-5. **SQL Injection Prevention**: Uso exclusivo de Eloquent ORM
-6. **Input Validation**: Form Requests con reglas estrictas
-7. **Soft Deletes**: Auditoría de eliminaciones
+Telescope provides debugging and monitoring for your API.
 
-### Configuración de Seguridad
+**Access:** `http://localhost:8000/telescope`
 
-```env
-# .env
-APP_DEBUG=false  # En producción
-APP_ENV=production
+**Features:**
+- Request/Response monitoring
+- Query logging
+- Exception tracking
+- Job monitoring
+- Cache operations
+- Log viewer
+
+**Configuration:**
+- Enabled in `.env`: `TELESCOPE_ENABLED=true`
+- Only tracks `api/*` paths (configured in `config/telescope.php`)
+- Available in `local` environment by default
+
+### Structured Logging
+
+Structured JSON logging for better log analysis.
+
+**Log files:**
+- Standard: `storage/logs/laravel.log`
+- Structured (JSON): `storage/logs/laravel-structured.log`
+
+**Usage:**
+
+```php
+use App\Helpers\LoggerHelper;
+
+LoggerHelper::info('Product created', [
+    'product_id' => 1,
+    'action' => 'create',
+]);
+
+LoggerHelper::apiRequest('POST', '/api/v1/products', [
+    'ip' => $request->ip(),
+]);
 ```
 
-## 🐛 Troubleshooting
+**Log levels:** `info`, `error`, `warning`, `debug`
 
-### Error: "Unauthenticated"
+**Auto-logging:**
+- API requests/responses logged automatically via `LogApiRequest` middleware
+- Service operations logged in ProductService and ProductPriceService
 
-**Solución:** Asegúrate de incluir el token en el header:
+## Security
 
-```
-Authorization: Bearer {your-token}
-```
+1. **Laravel Sanctum** – token authentication
+2. **Rate limiting** – 60 req/min default
+3. **CORS** – allowed origins
+4. **Mass assignment** – `$fillable` on models
+5. **SQL injection** – Eloquent only
+6. **Validation** – Form Requests
+7. **Soft deletes** – audit trail
 
-### Error: "SQLSTATE[HY000]: database is locked"
+Production: set `APP_DEBUG=false`, `APP_ENV=production`.
 
-**Solución:** SQLite no soporta múltiples escrituras concurrentes. Considera usar MySQL/PostgreSQL para producción.
+## Troubleshooting
 
-### Error: "Class 'Repository' not found"
+- **Unauthenticated:** use header `Authorization: Bearer {your-token}`
+- **Database locked:** use MySQL/PostgreSQL in production
+- **Class not found:** `composer dump-autoload`
+- **Migrations:** `php artisan migrate:fresh` then `php artisan db:seed`
 
-**Solución:** Ejecuta:
+## License
 
-```bash
-composer dump-autoload
-```
+Open source.
 
-### Migraciones fallan
+## Author
 
-**Solución:**
-
-```bash
-php artisan migrate:fresh
-php artisan db:seed
-```
-
-## 📄 Licencia
-
-Este proyecto es de código abierto.
-
-## 👤 Autor
-
-Desarrollado como prueba técnica siguiendo las mejores prácticas de Laravel.
+Technical assessment following Laravel best practices.
 
 ---
 
-## 🎓 Aprendizajes Clave
-
-Este proyecto demuestra:
-
-1. **Arquitectura limpia** con separación de responsabilidades
-2. **Código mantenible** y escalable
-3. **Testing** comprehensivo
-4. **Documentación** completa y profesional
-5. **Seguridad** como prioridad
-6. **Buenas prácticas** de la industria
-
-**¿Preguntas?** Consulta la documentación adicional en la carpeta `docs/`
+See `docs/`, `STRUCTURE.md`, and `GENERATE_TOKEN.md` for more.

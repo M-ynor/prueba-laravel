@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>Products API - Documentación</title>
+    <title>Products API - Documentation</title>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
 
@@ -60,57 +60,54 @@
                 <li class="tocify-item level-1" data-unique="introduction">
                     <a href="#introduction">Introduction</a>
                 </li>
+                                    <ul id="tocify-subheader-introduction" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="features">
+                                <a href="#features">Features</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="authentication">
+                                <a href="#authentication">Authentication</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-overview">
+                                <a href="#endpoints-overview">Endpoints overview</a>
+                            </li>
+                                                                        </ul>
                             </ul>
                     <ul id="tocify-header-authenticating-requests" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="authenticating-requests">
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
-                    <ul id="tocify-header-currencies" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="currencies">
-                    <a href="#currencies">Currencies</a>
+                    <ul id="tocify-header-endpoints" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="endpoints">
+                    <a href="#endpoints">Endpoints</a>
                 </li>
-                                    <ul id="tocify-subheader-currencies" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="currencies-GETapi-v1-currencies">
-                                <a href="#currencies-GETapi-v1-currencies">Listar divisas</a>
+                                    <ul id="tocify-subheader-endpoints" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-currencies">
+                                <a href="#endpoints-GETapi-v1-currencies">GET api/v1/currencies</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="currencies-GETapi-v1-currencies--id-">
-                                <a href="#currencies-GETapi-v1-currencies--id-">Ver divisa</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-currencies--id-">
+                                <a href="#endpoints-GETapi-v1-currencies--id-">GET api/v1/currencies/{id}</a>
                             </li>
-                                                                        </ul>
-                            </ul>
-                    <ul id="tocify-header-product-prices" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="product-prices">
-                    <a href="#product-prices">Product Prices</a>
-                </li>
-                                    <ul id="tocify-subheader-product-prices" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="product-prices-GETapi-v1-products--productId--prices">
-                                <a href="#product-prices-GETapi-v1-products--productId--prices">Listar precios de producto</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products">
+                                <a href="#endpoints-GETapi-v1-products">GET api/v1/products</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="product-prices-POSTapi-v1-products--productId--prices">
-                                <a href="#product-prices-POSTapi-v1-products--productId--prices">Crear/actualizar precio</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-products">
+                                <a href="#endpoints-POSTapi-v1-products">POST api/v1/products</a>
                             </li>
-                                                                        </ul>
-                            </ul>
-                    <ul id="tocify-header-products" class="tocify-header">
-                <li class="tocify-item level-1" data-unique="products">
-                    <a href="#products">Products</a>
-                </li>
-                                    <ul id="tocify-subheader-products" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="products-GETapi-v1-products">
-                                <a href="#products-GETapi-v1-products">Listar productos</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products--id-">
+                                <a href="#endpoints-GETapi-v1-products--id-">GET api/v1/products/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="products-POSTapi-v1-products">
-                                <a href="#products-POSTapi-v1-products">Crear producto</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-PUTapi-v1-products--id-">
+                                <a href="#endpoints-PUTapi-v1-products--id-">PUT api/v1/products/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="products-GETapi-v1-products--id-">
-                                <a href="#products-GETapi-v1-products--id-">Ver producto</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-products--id-">
+                                <a href="#endpoints-DELETEapi-v1-products--id-">DELETE api/v1/products/{id}</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="products-PUTapi-v1-products--id-">
-                                <a href="#products-PUTapi-v1-products--id-">Actualizar producto</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-products--productId--prices">
+                                <a href="#endpoints-GETapi-v1-products--productId--prices">GET api/v1/products/{productId}/prices</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="products-DELETEapi-v1-products--id-">
-                                <a href="#products-DELETEapi-v1-products--id-">Eliminar producto</a>
+                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-products--productId--prices">
+                                <a href="#endpoints-POSTapi-v1-products--productId--prices">POST api/v1/products/{productId}/prices</a>
                             </li>
                                                                         </ul>
                             </ul>
@@ -131,39 +128,123 @@
     <div class="dark-box"></div>
     <div class="content">
         <h1 id="introduction">Introduction</h1>
-<p>API RESTful para gestión de productos con soporte multi-divisa. Implementada con Laravel 11 siguiendo las mejores prácticas de arquitectura y desarrollo.</p>
+<p>RESTful API for product management with multi-currency support. Built with Laravel 11 following architecture and development best practices.</p>
 <aside>
     <strong>Base URL</strong>: <code>http://localhost:8000</code>
 </aside>
-<pre><code>Esta API permite gestionar productos con precios en múltiples divisas. 
-
-## Características
-
-- ✅ CRUD completo de productos
-- ✅ Soporte multi-divisa
-- ✅ Autenticación con Laravel Sanctum
-- ✅ Validación robusta
-- ✅ Arquitectura en capas (Repository-Service-Controller)
-
-## Autenticación
-
-Todos los endpoints requieren un token de Bearer. Usa el token en el header `Authorization: Bearer {token}`.
-
-&lt;aside class="notice"&gt;Puedes ver ejemplos de código en diferentes lenguajes en el panel derecho.&lt;/aside&gt;</code></pre>
+<p>This API lets you manage products with prices in multiple currencies.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Full product CRUD</li>
+<li>Multi-currency support</li>
+<li>Laravel Sanctum authentication</li>
+<li>Robust validation</li>
+<li>Layered architecture (Repository-Service-Controller)</li>
+</ul>
+<h2 id="authentication">Authentication</h2>
+<p>All endpoints require a Bearer token. Use the token in the header <code>Authorization: Bearer {token}</code>.</p>
+<aside class="notice">You can see code examples in different languages in the right panel.</aside>
+<hr />
+<h2 id="endpoints-overview">Endpoints overview</h2>
+<h3 id="currencies">Currencies</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/currencies</code></td>
+<td>List all currencies</td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/currencies/{id}</code></td>
+<td>Get currency by ID</td>
+</tr>
+</tbody>
+</table>
+<h3 id="products">Products</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/products</code></td>
+<td>Paginated list. Query params: <code>name</code>, <code>currency_id</code>, <code>min_price</code>, <code>max_price</code>, <code>per_page</code>, <code>sort_by</code>, <code>sort_order</code></td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/products</code></td>
+<td>Create product. Body: <code>name</code>, <code>description</code>, <code>price</code>, <code>currency_id</code>, <code>tax_cost</code>, <code>manufacturing_cost</code></td>
+</tr>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/products/{id}</code></td>
+<td>Get product by ID with relations</td>
+</tr>
+<tr>
+<td>PUT/PATCH</td>
+<td><code>/api/v1/products/{id}</code></td>
+<td>Update product (partial allowed)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td><code>/api/v1/products/{id}</code></td>
+<td>Soft delete product</td>
+</tr>
+</tbody>
+</table>
+<h3 id="product-prices">Product prices</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Endpoint</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td><code>/api/v1/products/{productId}/prices</code></td>
+<td>List prices for product in all currencies</td>
+</tr>
+<tr>
+<td>POST</td>
+<td><code>/api/v1/products/{productId}/prices</code></td>
+<td>Create or update price. Body: <code>currency_id</code>, <code>price</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-format">Response format</h3>
+<p>Success: <code>{ "success": true, "data": {...}, "message": "..." }</code><br />
+Error: <code>{ "success": false, "message": "...", "errors": {...} }</code></p>
+<p>HTTP codes: 200 OK, 201 Created, 401 Unauthenticated, 404 Not Found, 422 Validation Error, 500 Server Error.</p>
 
         <h1 id="authenticating-requests">Authenticating requests</h1>
 <p>This API is not authenticated.</p>
 
-        <h1 id="currencies">Currencies</h1>
+        <h1 id="endpoints">Endpoints</h1>
 
-    <p>API endpoints para gestionar divisas del sistema.</p>
+    
 
-                                <h2 id="currencies-GETapi-v1-currencies">Listar divisas</h2>
+                                <h2 id="endpoints-GETapi-v1-currencies">GET api/v1/currencies</h2>
 
 <p>
 </p>
 
-<p>Obtiene todas las divisas disponibles en el sistema.</p>
+
 
 <span id="example-requests-GETapi-v1-currencies">
 <blockquote>Example request:</blockquote>
@@ -195,29 +276,20 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-currencies">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
-                <pre>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;US Dollar&quot;,
-            &quot;code&quot;: &quot;USD&quot;,
-            &quot;symbol&quot;: &quot;$&quot;,
-            &quot;exchange_rate&quot;: 1
-        },
-        {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Euro&quot;,
-            &quot;code&quot;: &quot;EUR&quot;,
-            &quot;symbol&quot;: &quot;&euro;&quot;,
-            &quot;exchange_rate&quot;: 0.92
-        }
-    ],
-    &quot;message&quot;: &quot;Divisas obtenidas exitosamente&quot;
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;Unauthenticated&quot;
 }</code>
  </pre>
     </span>
@@ -294,12 +366,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="currencies-GETapi-v1-currencies--id-">Ver divisa</h2>
+                    <h2 id="endpoints-GETapi-v1-currencies--id-">GET api/v1/currencies/{id}</h2>
 
 <p>
 </p>
 
-<p>Obtiene una divisa específica por ID.</p>
+
 
 <span id="example-requests-GETapi-v1-currencies--id-">
 <blockquote>Example request:</blockquote>
@@ -307,14 +379,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/currencies/1" \
+    --get "http://localhost:8000/api/v1/currencies/architecto" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/currencies/1"
+    "http://localhost:8000/api/v1/currencies/architecto"
 );
 
 const headers = {
@@ -331,30 +403,20 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-currencies--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;US Dollar&quot;,
-        &quot;code&quot;: &quot;USD&quot;,
-        &quot;symbol&quot;: &quot;$&quot;,
-        &quot;exchange_rate&quot;: 1
-    },
-    &quot;message&quot;: &quot;Divisa obtenida exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Currency not found with ID: 1&quot;
+    &quot;message&quot;: &quot;Unauthenticated&quot;
 }</code>
  </pre>
     </span>
@@ -432,378 +494,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-v1-currencies--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-currencies--id-"
+               value="architecto"
                data-component="url">
     <br>
-<p>ID de la divisa. Example: <code>1</code></p>
+<p>The ID of the currency. Example: <code>architecto</code></p>
             </div>
                     </form>
 
-                <h1 id="product-prices">Product Prices</h1>
-
-    <p>API endpoints para gestionar precios de productos en diferentes divisas.</p>
-
-                                <h2 id="product-prices-GETapi-v1-products--productId--prices">Listar precios de producto</h2>
+                    <h2 id="endpoints-GETapi-v1-products">GET api/v1/products</h2>
 
 <p>
 </p>
 
-<p>Obtiene todos los precios de un producto en diferentes divisas.</p>
 
-<span id="example-requests-GETapi-v1-products--productId--prices">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/products/1/prices" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/1/prices"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-products--productId--prices">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;product_id&quot;: 1,
-            &quot;currency&quot;: {
-                &quot;id&quot;: 2,
-                &quot;name&quot;: &quot;Euro&quot;,
-                &quot;symbol&quot;: &quot;EUR&quot;,
-                &quot;exchange_rate&quot;: 0.92
-            },
-            &quot;price&quot;: 919.99
-        }
-    ],
-    &quot;message&quot;: &quot;Precios obtenidos exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Producto no encontrado&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-products--productId--prices" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-products--productId--prices"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-products--productId--prices"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-products--productId--prices" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-products--productId--prices">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-products--productId--prices" data-method="GET"
-      data-path="api/v1/products/{productId}/prices"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--productId--prices', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-products--productId--prices"
-                    onclick="tryItOut('GETapi-v1-products--productId--prices');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-products--productId--prices"
-                    onclick="cancelTryOut('GETapi-v1-products--productId--prices');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-products--productId--prices"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/products/{productId}/prices</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-products--productId--prices"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-products--productId--prices"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>productId</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="productId"                data-endpoint="GETapi-v1-products--productId--prices"
-               value="1"
-               data-component="url">
-    <br>
-<p>ID del producto. Example: <code>1</code></p>
-            </div>
-                    </form>
-
-                    <h2 id="product-prices-POSTapi-v1-products--productId--prices">Crear/actualizar precio</h2>
-
-<p>
-</p>
-
-<p>Crea o actualiza el precio de un producto en una divisa específica.</p>
-
-<span id="example-requests-POSTapi-v1-products--productId--prices">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost:8000/api/v1/products/1/prices" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"currency_id\": 2,
-    \"price\": 850.5
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/1/prices"
-);
-
-const headers = {
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "currency_id": 2,
-    "price": 850.5
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-products--productId--prices">
-            <blockquote>
-            <p>Example response (201):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;product_id&quot;: 1,
-        &quot;currency&quot;: {
-            &quot;id&quot;: 2,
-            &quot;name&quot;: &quot;Euro&quot;,
-            &quot;symbol&quot;: &quot;EUR&quot;,
-            &quot;exchange_rate&quot;: 0.92
-        },
-        &quot;price&quot;: 850.5
-    },
-    &quot;message&quot;: &quot;Precio creado/actualizado exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Product not found with ID: 1&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-POSTapi-v1-products--productId--prices" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-products--productId--prices"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-products--productId--prices"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-products--productId--prices" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-products--productId--prices">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-v1-products--productId--prices" data-method="POST"
-      data-path="api/v1/products/{productId}/prices"
-      data-authed="0"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-products--productId--prices', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-products--productId--prices"
-                    onclick="tryItOut('POSTapi-v1-products--productId--prices');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-products--productId--prices"
-                    onclick="cancelTryOut('POSTapi-v1-products--productId--prices');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-products--productId--prices"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/products/{productId}/prices</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-v1-products--productId--prices"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-v1-products--productId--prices"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
-                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>productId</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="productId"                data-endpoint="POSTapi-v1-products--productId--prices"
-               value="1"
-               data-component="url">
-    <br>
-<p>ID del producto. Example: <code>1</code></p>
-            </div>
-                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>currency_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="currency_id"                data-endpoint="POSTapi-v1-products--productId--prices"
-               value="2"
-               data-component="body">
-    <br>
-<p>ID de la divisa. Example: <code>2</code></p>
-        </div>
-                <div style=" padding-left: 28px;  clear: unset;">
-            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
- &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="price"                data-endpoint="POSTapi-v1-products--productId--prices"
-               value="850.5"
-               data-component="body">
-    <br>
-<p>Precio en la divisa especificada. Example: <code>850.5</code></p>
-        </div>
-        </form>
-
-                <h1 id="products">Products</h1>
-
-    <p>API endpoints para gestionar productos del sistema.</p>
-
-                                <h2 id="products-GETapi-v1-products">Listar productos</h2>
-
-<p>
-</p>
-
-<p>Obtiene una lista paginada de productos con filtros opcionales.</p>
 
 <span id="example-requests-GETapi-v1-products">
 <blockquote>Example request:</blockquote>
@@ -811,7 +519,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/products?name=laptop&amp;currency_id=1&amp;min_price=100&amp;max_price=1000&amp;per_page=15&amp;sort_by=price&amp;sort_order=desc" \
+    --get "http://localhost:8000/api/v1/products" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
@@ -820,18 +528,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <pre><code class="language-javascript">const url = new URL(
     "http://localhost:8000/api/v1/products"
 );
-
-const params = {
-    "name": "laptop",
-    "currency_id": "1",
-    "min_price": "100",
-    "max_price": "1000",
-    "per_page": "15",
-    "sort_by": "price",
-    "sort_order": "desc",
-};
-Object.keys(params)
-    .forEach(key =&gt; url.searchParams.append(key, params[key]));
 
 const headers = {
     "Content-Type": "application/json",
@@ -847,35 +543,20 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-products">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
-                <pre>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: [
-        {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;Laptop Dell XPS 13&quot;,
-            &quot;description&quot;: &quot;High-performance laptop&quot;,
-            &quot;price&quot;: 999.99,
-            &quot;currency&quot;: {
-                &quot;id&quot;: 1,
-                &quot;name&quot;: &quot;US Dollar&quot;,
-                &quot;symbol&quot;: &quot;USD&quot;
-            },
-            &quot;tax_cost&quot;: 150,
-            &quot;manufacturing_cost&quot;: 500,
-            &quot;total_cost&quot;: 1649.99
-        }
-    ],
-    &quot;meta&quot;: {
-        &quot;total&quot;: 1,
-        &quot;per_page&quot;: 15,
-        &quot;current_page&quot;: 1,
-        &quot;last_page&quot;: 1
-    },
-    &quot;message&quot;: &quot;Productos obtenidos exitosamente&quot;
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;Unauthenticated&quot;
 }</code>
  </pre>
     </span>
@@ -950,99 +631,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     <br>
 <p>Example: <code>application/json</code></p>
             </div>
-                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>name</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="name"                data-endpoint="GETapi-v1-products"
-               value="laptop"
-               data-component="query">
-    <br>
-<p>Filtrar por nombre de producto (búsqueda parcial). Example: <code>laptop</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>currency_id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="currency_id"                data-endpoint="GETapi-v1-products"
-               value="1"
-               data-component="query">
-    <br>
-<p>Filtrar por ID de divisa. Example: <code>1</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>min_price</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="min_price"                data-endpoint="GETapi-v1-products"
-               value="100"
-               data-component="query">
-    <br>
-<p>Precio mínimo. Example: <code>100</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>max_price</code></b>&nbsp;&nbsp;
-<small>number</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="max_price"                data-endpoint="GETapi-v1-products"
-               value="1000"
-               data-component="query">
-    <br>
-<p>Precio máximo. Example: <code>1000</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>per_page</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="per_page"                data-endpoint="GETapi-v1-products"
-               value="15"
-               data-component="query">
-    <br>
-<p>Items por página. Example: <code>15</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>sort_by</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="sort_by"                data-endpoint="GETapi-v1-products"
-               value="price"
-               data-component="query">
-    <br>
-<p>Campo para ordenar. Example: <code>price</code></p>
-            </div>
-                                    <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>sort_order</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
-<i>optional</i> &nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="sort_order"                data-endpoint="GETapi-v1-products"
-               value="desc"
-               data-component="query">
-    <br>
-<p>Orden (asc/desc). Example: <code>desc</code></p>
-            </div>
-                </form>
+                        </form>
 
-                    <h2 id="products-POSTapi-v1-products">Crear producto</h2>
+                    <h2 id="endpoints-POSTapi-v1-products">POST api/v1/products</h2>
 
 <p>
 </p>
 
-<p>Crea un nuevo producto en el sistema.</p>
+
 
 <span id="example-requests-POSTapi-v1-products">
 <blockquote>Example request:</blockquote>
@@ -1054,12 +650,12 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"Laptop Dell XPS 13\",
-    \"description\": \"High-performance laptop\",
-    \"price\": 999.99,
-    \"currency_id\": 1,
-    \"tax_cost\": 150,
-    \"manufacturing_cost\": 500
+    \"name\": \"b\",
+    \"description\": \"Eius et animi quos velit et.\",
+    \"price\": 60,
+    \"currency_id\": 16,
+    \"tax_cost\": 39,
+    \"manufacturing_cost\": 84
 }"
 </code></pre></div>
 
@@ -1075,12 +671,12 @@ const headers = {
 };
 
 let body = {
-    "name": "Laptop Dell XPS 13",
-    "description": "High-performance laptop",
-    "price": 999.99,
-    "currency_id": 1,
-    "tax_cost": 150,
-    "manufacturing_cost": 500
+    "name": "b",
+    "description": "Eius et animi quos velit et.",
+    "price": 60,
+    "currency_id": 16,
+    "tax_cost": 39,
+    "manufacturing_cost": 84
 };
 
 fetch(url, {
@@ -1092,46 +688,7 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-v1-products">
-            <blockquote>
-            <p>Example response (201):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Laptop Dell XPS 13&quot;,
-        &quot;description&quot;: &quot;High-performance laptop&quot;,
-        &quot;price&quot;: 999.99,
-        &quot;currency&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;US Dollar&quot;,
-            &quot;symbol&quot;: &quot;USD&quot;
-        },
-        &quot;tax_cost&quot;: 150,
-        &quot;manufacturing_cost&quot;: 500,
-        &quot;total_cost&quot;: 1649.99
-    },
-    &quot;message&quot;: &quot;Producto creado exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (422):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Error de validaci&oacute;n&quot;,
-    &quot;errors&quot;: {
-        &quot;name&quot;: [
-            &quot;El nombre del producto es obligatorio.&quot;
-        ]
-    }
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-POSTapi-v1-products" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-v1-products"></span>:
@@ -1211,10 +768,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="POSTapi-v1-products"
-               value="Laptop Dell XPS 13"
+               value="b"
                data-component="body">
     <br>
-<p>Nombre del producto. Example: <code>Laptop Dell XPS 13</code></p>
+<p>Must not be greater than 255 characters. Example: <code>b</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1223,10 +780,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="POSTapi-v1-products"
-               value="High-performance laptop"
+               value="Eius et animi quos velit et."
                data-component="body">
     <br>
-<p>Descripción del producto. Example: <code>High-performance laptop</code></p>
+<p>Example: <code>Eius et animi quos velit et.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -1235,10 +792,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="price"                data-endpoint="POSTapi-v1-products"
-               value="999.99"
+               value="60"
                data-component="body">
     <br>
-<p>Precio del producto. Example: <code>999.99</code></p>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>60</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>currency_id</code></b>&nbsp;&nbsp;
@@ -1247,10 +804,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="currency_id"                data-endpoint="POSTapi-v1-products"
-               value="1"
+               value="16"
                data-component="body">
     <br>
-<p>ID de la divisa base. Example: <code>1</code></p>
+<p>The <code>id</code> of an existing record in the currencies table. Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tax_cost</code></b>&nbsp;&nbsp;
@@ -1259,10 +816,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tax_cost"                data-endpoint="POSTapi-v1-products"
-               value="150"
+               value="39"
                data-component="body">
     <br>
-<p>Costo de impuestos. Example: <code>150</code></p>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>39</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>manufacturing_cost</code></b>&nbsp;&nbsp;
@@ -1271,19 +828,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="manufacturing_cost"                data-endpoint="POSTapi-v1-products"
-               value="500"
+               value="84"
                data-component="body">
     <br>
-<p>Costo de fabricación. Example: <code>500</code></p>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>84</code></p>
         </div>
         </form>
 
-                    <h2 id="products-GETapi-v1-products--id-">Ver producto</h2>
+                    <h2 id="endpoints-GETapi-v1-products--id-">GET api/v1/products/{id}</h2>
 
 <p>
 </p>
 
-<p>Obtiene un producto específico por ID con todas sus relaciones (divisa, precios en otras divisas).</p>
+
 
 <span id="example-requests-GETapi-v1-products--id-">
 <blockquote>Example request:</blockquote>
@@ -1291,14 +848,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost:8000/api/v1/products/1" \
+    --get "http://localhost:8000/api/v1/products/architecto" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/1"
+    "http://localhost:8000/api/v1/products/architecto"
 );
 
 const headers = {
@@ -1315,38 +872,20 @@ fetch(url, {
 
 <span id="example-responses-GETapi-v1-products--id-">
             <blockquote>
-            <p>Example response (200):</p>
+            <p>Example response (401):</p>
         </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Laptop Dell XPS 13&quot;,
-        &quot;description&quot;: &quot;High-performance laptop&quot;,
-        &quot;price&quot;: 999.99,
-        &quot;currency&quot;: {
-            &quot;id&quot;: 1,
-            &quot;name&quot;: &quot;US Dollar&quot;,
-            &quot;symbol&quot;: &quot;USD&quot;
-        },
-        &quot;tax_cost&quot;: 150,
-        &quot;manufacturing_cost&quot;: 500,
-        &quot;total_cost&quot;: 1649.99,
-        &quot;prices&quot;: []
-    },
-    &quot;message&quot;: &quot;Producto obtenido exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
 
 <code class="language-json" style="max-height: 300px;">{
     &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Producto no encontrado&quot;
+    &quot;message&quot;: &quot;Unauthenticated&quot;
 }</code>
  </pre>
     </span>
@@ -1424,24 +963,24 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="GETapi-v1-products--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="GETapi-v1-products--id-"
+               value="architecto"
                data-component="url">
     <br>
-<p>ID del producto. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>architecto</code></p>
             </div>
                     </form>
 
-                    <h2 id="products-PUTapi-v1-products--id-">Actualizar producto</h2>
+                    <h2 id="endpoints-PUTapi-v1-products--id-">PUT api/v1/products/{id}</h2>
 
 <p>
 </p>
 
-<p>Actualiza un producto existente (actualización parcial permitida).</p>
+
 
 <span id="example-requests-PUTapi-v1-products--id-">
 <blockquote>Example request:</blockquote>
@@ -1449,23 +988,23 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost:8000/api/v1/products/1" \
+    "http://localhost:8000/api/v1/products/architecto" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"name\": \"Laptop Dell XPS 13 - Updated\",
-    \"description\": \"Updated description\",
-    \"price\": 1099.99,
-    \"currency_id\": 1,
-    \"tax_cost\": 165,
-    \"manufacturing_cost\": 520
+    \"name\": \"b\",
+    \"description\": \"Eius et animi quos velit et.\",
+    \"price\": 60,
+    \"currency_id\": 16,
+    \"tax_cost\": 39,
+    \"manufacturing_cost\": 84
 }"
 </code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/1"
+    "http://localhost:8000/api/v1/products/architecto"
 );
 
 const headers = {
@@ -1474,12 +1013,12 @@ const headers = {
 };
 
 let body = {
-    "name": "Laptop Dell XPS 13 - Updated",
-    "description": "Updated description",
-    "price": 1099.99,
-    "currency_id": 1,
-    "tax_cost": 165,
-    "manufacturing_cost": 520
+    "name": "b",
+    "description": "Eius et animi quos velit et.",
+    "price": 60,
+    "currency_id": 16,
+    "tax_cost": 39,
+    "manufacturing_cost": 84
 };
 
 fetch(url, {
@@ -1491,33 +1030,7 @@ fetch(url, {
 </span>
 
 <span id="example-responses-PUTapi-v1-products--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;data&quot;: {
-        &quot;id&quot;: 1,
-        &quot;name&quot;: &quot;Laptop Dell XPS 13 - Updated&quot;,
-        &quot;price&quot;: 1099.99,
-        &quot;tax_cost&quot;: 165
-    },
-    &quot;message&quot;: &quot;Producto actualizado exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Producto no encontrado&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-PUTapi-v1-products--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-PUTapi-v1-products--id-"></span>:
@@ -1596,15 +1109,15 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
+<small>string</small>&nbsp;
  &nbsp;
  &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="PUTapi-v1-products--id-"
-               value="1"
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="PUTapi-v1-products--id-"
+               value="architecto"
                data-component="url">
     <br>
-<p>ID del producto. Example: <code>1</code></p>
+<p>The ID of the product. Example: <code>architecto</code></p>
             </div>
                             <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
         <div style=" padding-left: 28px;  clear: unset;">
@@ -1614,10 +1127,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="name"                data-endpoint="PUTapi-v1-products--id-"
-               value="Laptop Dell XPS 13 - Updated"
+               value="b"
                data-component="body">
     <br>
-<p>Nombre del producto. Example: <code>Laptop Dell XPS 13 - Updated</code></p>
+<p>Must not be greater than 255 characters. Example: <code>b</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1626,10 +1139,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="description"                data-endpoint="PUTapi-v1-products--id-"
-               value="Updated description"
+               value="Eius et animi quos velit et."
                data-component="body">
     <br>
-<p>Descripción del producto. Example: <code>Updated description</code></p>
+<p>Example: <code>Eius et animi quos velit et.</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
@@ -1638,10 +1151,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="price"                data-endpoint="PUTapi-v1-products--id-"
-               value="1099.99"
+               value="60"
                data-component="body">
     <br>
-<p>Precio del producto. Example: <code>1099.99</code></p>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>60</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>currency_id</code></b>&nbsp;&nbsp;
@@ -1650,10 +1163,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="currency_id"                data-endpoint="PUTapi-v1-products--id-"
-               value="1"
+               value="16"
                data-component="body">
     <br>
-<p>ID de la divisa. Example: <code>1</code></p>
+<p>The <code>id</code> of an existing record in the currencies table. Example: <code>16</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>tax_cost</code></b>&nbsp;&nbsp;
@@ -1662,10 +1175,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="tax_cost"                data-endpoint="PUTapi-v1-products--id-"
-               value="165"
+               value="39"
                data-component="body">
     <br>
-<p>Costo de impuestos. Example: <code>165</code></p>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>39</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>manufacturing_cost</code></b>&nbsp;&nbsp;
@@ -1674,19 +1187,19 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="number" style="display: none"
                step="any"               name="manufacturing_cost"                data-endpoint="PUTapi-v1-products--id-"
-               value="520"
+               value="84"
                data-component="body">
     <br>
-<p>Costo de fabricación. Example: <code>520</code></p>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>84</code></p>
         </div>
         </form>
 
-                    <h2 id="products-DELETEapi-v1-products--id-">Eliminar producto</h2>
+                    <h2 id="endpoints-DELETEapi-v1-products--id-">DELETE api/v1/products/{id}</h2>
 
 <p>
 </p>
 
-<p>Elimina un producto del sistema (soft delete).</p>
+
 
 <span id="example-requests-DELETEapi-v1-products--id-">
 <blockquote>Example request:</blockquote>
@@ -1694,14 +1207,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost:8000/api/v1/products/1" \
+    "http://localhost:8000/api/v1/products/architecto" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
 
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost:8000/api/v1/products/1"
+    "http://localhost:8000/api/v1/products/architecto"
 );
 
 const headers = {
@@ -1717,27 +1230,7 @@ fetch(url, {
 </span>
 
 <span id="example-responses-DELETEapi-v1-products--id-">
-            <blockquote>
-            <p>Example response (200):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: true,
-    &quot;message&quot;: &quot;Producto eliminado exitosamente&quot;
-}</code>
- </pre>
-            <blockquote>
-            <p>Example response (404):</p>
-        </blockquote>
-                <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;success&quot;: false,
-    &quot;message&quot;: &quot;Producto no encontrado&quot;
-}</code>
- </pre>
-    </span>
+</span>
 <span id="execution-results-DELETEapi-v1-products--id-" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-DELETEapi-v1-products--id-"></span>:
@@ -1812,17 +1305,316 @@ You can check the Dev Tools console for debugging information.</code></pre>
                         <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="id"                data-endpoint="DELETEapi-v1-products--id-"
+               value="architecto"
+               data-component="url">
+    <br>
+<p>The ID of the product. Example: <code>architecto</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-GETapi-v1-products--productId--prices">GET api/v1/products/{productId}/prices</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-products--productId--prices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost:8000/api/v1/products/architecto/prices" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products/architecto/prices"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-products--productId--prices">
+            <blockquote>
+            <p>Example response (401):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;success&quot;: false,
+    &quot;message&quot;: &quot;Unauthenticated&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-products--productId--prices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-products--productId--prices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-products--productId--prices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-products--productId--prices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-products--productId--prices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-products--productId--prices" data-method="GET"
+      data-path="api/v1/products/{productId}/prices"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-products--productId--prices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-products--productId--prices"
+                    onclick="tryItOut('GETapi-v1-products--productId--prices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-products--productId--prices"
+                    onclick="cancelTryOut('GETapi-v1-products--productId--prices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-products--productId--prices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/products/{productId}/prices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-products--productId--prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-products--productId--prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>productId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="productId"                data-endpoint="GETapi-v1-products--productId--prices"
+               value="architecto"
+               data-component="url">
+    <br>
+<p>Example: <code>architecto</code></p>
+            </div>
+                    </form>
+
+                    <h2 id="endpoints-POSTapi-v1-products--productId--prices">POST api/v1/products/{productId}/prices</h2>
+
+<p>
+</p>
+
+
+
+<span id="example-requests-POSTapi-v1-products--productId--prices">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost:8000/api/v1/products/architecto/prices" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"currency_id\": 16,
+    \"price\": 39
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost:8000/api/v1/products/architecto/prices"
+);
+
+const headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "currency_id": 16,
+    "price": 39
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-products--productId--prices">
+</span>
+<span id="execution-results-POSTapi-v1-products--productId--prices" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-products--productId--prices"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-products--productId--prices"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-products--productId--prices" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-products--productId--prices">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-products--productId--prices" data-method="POST"
+      data-path="api/v1/products/{productId}/prices"
+      data-authed="0"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-products--productId--prices', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-products--productId--prices"
+                    onclick="tryItOut('POSTapi-v1-products--productId--prices');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-products--productId--prices"
+                    onclick="cancelTryOut('POSTapi-v1-products--productId--prices');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-products--productId--prices"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/products/{productId}/prices</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-products--productId--prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-products--productId--prices"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                        <h4 class="fancy-heading-panel"><b>URL Parameters</b></h4>
+                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>productId</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="productId"                data-endpoint="POSTapi-v1-products--productId--prices"
+               value="architecto"
+               data-component="url">
+    <br>
+<p>Example: <code>architecto</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>currency_id</code></b>&nbsp;&nbsp;
 <small>integer</small>&nbsp;
  &nbsp;
  &nbsp;
                 <input type="number" style="display: none"
-               step="any"               name="id"                data-endpoint="DELETEapi-v1-products--id-"
-               value="1"
-               data-component="url">
+               step="any"               name="currency_id"                data-endpoint="POSTapi-v1-products--productId--prices"
+               value="16"
+               data-component="body">
     <br>
-<p>ID del producto. Example: <code>1</code></p>
-            </div>
-                    </form>
+<p>The <code>id</code> of an existing record in the currencies table. Example: <code>16</code></p>
+        </div>
+                <div style=" padding-left: 28px;  clear: unset;">
+            <b style="line-height: 2;"><code>price</code></b>&nbsp;&nbsp;
+<small>number</small>&nbsp;
+ &nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="price"                data-endpoint="POSTapi-v1-products--productId--prices"
+               value="39"
+               data-component="body">
+    <br>
+<p>Must match the regex /^\d+(.\d{1,2})?$/. Must be at least 0. Example: <code>39</code></p>
+        </div>
+        </form>
 
             
 
